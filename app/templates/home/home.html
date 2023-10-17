@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<nav class="navbar navbar-expand fixed-top main-navbar bg-default" *ngIf="!hideHavbar()">
+  <div class="container-fluid">
+    <a class="navbar-brand color-default" href="">FastAPI</a>
+
+    {% if not is_login_in %}
+    <a href="/user/sign-in">
+      <button class="btn btn-success">Sign in</button>
+    </a>
+    {% else %}
+    <form method="POST" action="user/sign-out">
+      {{username}}
+      <button class="btn btn-danger ms-3">Log out</button>
+    </form>
+    {% endif %}
+  </div>
+  
+</nav>
+{% if not is_login_in %}
+<div class="d-flex justify-content-center flex-column align-items-center h-100">
+  <h1>FastApi for CI/CD project!</h1>
+  <h3>By Oleksii Olchedai</h3>
+  <h5>!For &#60EPAM&#62!</h5>
+</div>
+{% else %}
+<div style="height: 50px;">
+</div>
+
+<div class="d-flex flex-column align-items-center">
+  <h2>Tasks</h2>
+  <table class="table table-striped table-container">
+    <thead>
+      <tr class="bg-success">
+        <th scope="col">№</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{task.title}}</td>
+        <td>{{task.content}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form class="table-container d-flex flex-column align-items-center" method="POST" action="/task">
+    <h3>Create new task</h3>
+    <input type="text" name="title" class="my-3 form-control custom-control" placeholder="Title" required>
+    <textarea name="content" class="my-3 form-control custom-control" placeholder="Content" required></textarea>
+    <button class="btn btn-primary align-self-end" type="submit">Create</button>
+  </form>
+
+</div>
+
+{% endif %}
+{% endblock %}

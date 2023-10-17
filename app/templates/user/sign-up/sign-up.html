@@ -1,0 +1,53 @@
+{% extends 'user/user.html' %}
+
+{% block user_body %}
+<form class="mx-3 my-5" method="POST" action="/user/sign-up">
+  <div class="my-3 required">
+    <input type="text" name="username" class="form-control custom-control" placeholder="Username" minlength="6" required>
+  </div>
+
+  <div class="my-3">
+    <input type="text" name="full_name" class="form-control custom-control" placeholder="Full name">
+  </div>
+
+  <div class="my-3 required">
+    <input type="password" name="password" id="password" class="form-control custom-control" placeholder="Password" minlength="6" onkeyup='check();' required>
+  </div>
+
+  <div class="my-3 required">
+    <input type="password" id="confirm-password" class="form-control custom-control" placeholder="Confirm password" onkeyup='check();' required>
+    <label class="text-danger" id="not-match-password"></label>
+  </div>
+
+  <button class="btn btn-success form-control submit-btn" type="submit">Sign up</button>
+</form>
+
+
+
+<script>
+
+  const inputs = document.getElementsByTagName('input');
+  [...inputs].forEach(input => {
+    input.addEventListener("focusout", function(){
+      this.classList.add("focused");
+    });
+  });
+
+
+  var psswd = document.getElementById('password');
+  var conf_psswd = document.getElementById('confirm-password');
+
+
+  var check = function() {
+    if (psswd.value == conf_psswd.value || conf_psswd.value == '') {
+      conf_psswd.setCustomValidity("");
+      document.getElementById('not-match-password').innerHTML = '';
+    } else {
+      conf_psswd.setCustomValidity("Invalid field.");
+      document.getElementById('not-match-password').innerHTML = 'not matching';
+    }
+  }
+</script>
+{% endblock %}
+
+

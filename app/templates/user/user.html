@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="wrapper">
+  <div class="wrapped-div bg-default mx-0">
+    <div class="sign-tabs d-flex px-0">
+      <a href="/user/sign-in" class="w-50 d-flex justify-content-center {{'active' if url_tab == 'sign-in'}}">Sign In</a>
+      <a href="/user/sign-up" class="w-50 d-flex justify-content-center {{'active' if url_tab == 'sign-up'}}">Sign Up</a>
+    </div>
+    {% block user_body %}{% endblock %}
+  </div>  
+</div>
+{% if result != None and result != {} %}
+<div id="info-card" class="card position-fixed hidden {{'success' if result|length >= 0 and result[0].type == 'success' else 'danger'}}">
+  <div class="card-body">
+    <h5 class="card-title">{{result[0].title if result|length >= 0}}</h5>
+    
+    <p class="card-text">{{result[0].description if result|length >= 0}}</p>
+  </div>
+</div>
+
+<script>
+  var info_card = document.getElementById('info-card');
+
+  setTimeout(
+    function() {
+      info_card.classList.remove('hidden');
+    }, 100);
+
+  setTimeout(
+    function() {
+      info_card.classList.add('hidden');
+    }, 3000);
+</script>
+
+{% endif %}
+
+{% endblock %}

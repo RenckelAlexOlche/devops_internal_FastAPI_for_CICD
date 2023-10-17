@@ -1,0 +1,9 @@
+{% extends 'user/user.html' %}
+
+{% block user_body %}
+<form class="mx-3 my-5" method="POST" action="/user/sign-in">
+  <input type="text" name="username" class="my-3 form-control custom-control" placeholder="Username" required>
+  <input type="password" name="password" class="my-3 form-control custom-control" placeholder="Password" required>
+  <button id="sign_in_button" class="btn btn-success form-control submit-btn" type="submit">Sign in</button>
+</form>
+{% endblock %}

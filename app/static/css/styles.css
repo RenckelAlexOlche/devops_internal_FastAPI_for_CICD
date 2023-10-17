@@ -1,0 +1,193 @@
+html
+{
+    height: 100%!important;
+}
+
+body
+{
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0;
+    padding: 0;
+    overflow-y:scroll;
+    background-color: #e7e9e3;
+}
+
+::-webkit-scrollbar 
+{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track 
+{
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb 
+{
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #555;
+}
+
+.bg-default
+{
+    background-color: rgb(248, 249, 250);
+}
+
+.bg-default-primary
+{
+    background-color: rgb(178, 182, 184);
+}
+
+.bg-default-secondary
+{
+    background-color: rgb(228, 229, 230);
+}
+
+.bg-colored
+{
+    background-color: rgb(48, 161, 114);
+}
+
+
+.color-default
+{
+    color: rgb(33, 37, 41);
+}
+
+.inverse-color.color-default
+{
+    color: rgb(248, 249, 250);
+}
+
+.main-navbar
+{
+    box-shadow: 0 0 5px 0 rgba(16, 22, 15, 0.2);
+    height: 50px;
+}
+
+.navbar-brand
+{
+    font-weight: 500;
+}
+
+.wrapper
+{
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapped-div
+{
+    width: 550px;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sign-tabs
+{
+    background-color: rgb(57, 114, 92);
+    
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.sign-tabs a
+{
+    padding: 10px;
+    color: rgb(248, 249, 250);
+    text-decoration: none;
+}
+
+.sign-tabs a.active
+{
+    border-radius: 20px 20px 0 0;
+    background-color: rgb(69, 134, 97);
+}
+
+.form-control.custom-control
+{
+    border: none;
+    border-bottom: 3px solid rgb(136, 170, 151);
+    /* rgb(90, 148, 115); */
+}
+
+.form-control.custom-control:focus
+{
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid rgb(52, 155, 97);
+}
+
+input.form-control.custom-control.focused:invalid
+{
+    border-bottom: 3px solid rgb(172, 63, 55);
+}
+
+input.form-control.custom-control.focused:focus:invalid
+{
+    border-bottom: 3px solid rgb(207, 38, 26);
+}
+
+.required
+{
+    position: relative;
+}
+
+.required::after
+{
+    content: '*';
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    color: #f00;
+}
+
+
+form:invalid .submit-btn
+{
+    pointer-events: none;
+    opacity: .65;
+}
+
+.card
+{
+    width: 18rem;
+    top: 10px;
+    right: 10px;
+    color: rgb(248, 249, 250);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card.hidden
+{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card.danger
+{
+    background-color: #eb4322!important;
+}
+
+.card.success
+{
+    background-color: #08c112!important;
+}
+
+.table-container
+{
+    max-width: 100%;
+    width: 1000px;
+}
