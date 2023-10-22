@@ -1,3 +1,5 @@
+## The optimizations provided here are theoretical and I will try all of them step by step later
+
 ============================DOCKERFILE_OPTIMIZATION=============================
 
 Here's an optimized Dockerfile:
