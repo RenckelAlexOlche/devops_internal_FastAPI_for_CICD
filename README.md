@@ -1,4 +1,4 @@
-===================================DOCKERFILE===================================
+=================================DOCKERFILE=================================
 
 ```dockerfile
 FROM python:3.10
@@ -51,7 +51,7 @@ This Dockerfile is used to create a Docker image for a Python application. Let's
 
 In summary, this Dockerfile sets up a Python environment, installs the necessary packages, and prepares to run a Python application using Uvicorn when the container starts. The application seems to be related to a MySQL database, given the environment variables, and possibly uses Alembic for database migrations.
 
-====================================JENKINS=====================================
+==================================JENKINS===================================
 
 ```groovy
 pipeline {
@@ -125,7 +125,7 @@ In summary, this Jenkinsfile defines a CI/CD pipeline that:
 2. Pushes the image to Docker Hub.
 3. Uses Ansible to deploy the image to a server.
 
-====================================ANSIBLE=====================================
+==================================ANSIBLE===================================
 
 ```yaml
 ---
