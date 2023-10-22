@@ -1,4 +1,5 @@
 ============================DOCKERFILE_OPTIMIZATION=============================
+
 Here's an optimized Dockerfile:
 
 ```Dockerfile
